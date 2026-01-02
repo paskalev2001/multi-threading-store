@@ -28,7 +28,6 @@ public class Store {
     public Receipt sell(String buyerId, String buyerName, Cart cart) {
         Objects.requireNonNull(cart, "cart must not be null");
 
-        // Make "requested" stable for the receipt (copy)
         EnumMap<Product, Integer> requested = new EnumMap<>(Product.class);
         requested.putAll(cart.getItemsView());
 
@@ -47,7 +46,6 @@ public class Store {
                 int available = inventory.getOrDefault(product, 0);
                 int soldQty = Math.min(available, reqQty);
 
-                // decrement inventory
                 inventory.put(product, available - soldQty);
 
                 if (soldQty > 0) bought.put(product, soldQty);

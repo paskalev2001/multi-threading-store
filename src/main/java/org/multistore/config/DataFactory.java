@@ -11,11 +11,11 @@ public final class DataFactory {
 
     public static Store defaultStore() {
         Map<Product, Integer> initial = Map.of(
-                Product.BREAD, 50,
-                Product.MILK, 50,
-                Product.CHEESE, 50,
-                Product.APPLE, 50,
-                Product.CHOCOLATE, 50
+                Product.BREAD, 30,
+                Product.MILK, 30,
+                Product.CHEESE, 30,
+                Product.APPLE, 30,
+                Product.CHOCOLATE, 30
         );
         return new Store(initial);
     }

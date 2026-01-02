@@ -18,7 +18,6 @@ public class PurchaseTask implements Callable<Receipt> {
 
     @Override
     public Receipt call() throws Exception {
-        // Small delay to make concurrency visible
         Thread.sleep(ThreadLocalRandom.current().nextInt(50, 250));
         return store.sell(buyer);
     }
