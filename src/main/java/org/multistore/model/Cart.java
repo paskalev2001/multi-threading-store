@@ -31,9 +31,6 @@ public class Cart {
         return items.isEmpty();
     }
 
-    /**
-     * Total = sum(product.unitPrice * quantity)
-     */
     public BigDecimal totalPrice() {
         BigDecimal total = BigDecimal.ZERO;
         for (Map.Entry<Product, Integer> e : items.entrySet()) {
