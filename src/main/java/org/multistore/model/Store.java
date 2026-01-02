@@ -16,21 +16,10 @@ public class Store {
         }
     }
 
-    /**
-     * Thread-safe snapshot for printing/reporting.
-     */
     public synchronized EnumMap<Product, Integer> snapshotInventory() {
         return new EnumMap<>(inventory);
     }
 
-    /**
-     * Sell the buyer's cart with PARTIAL fulfillment:
-     * - requested = cart items
-     * - bought = min(available, requested) for each product
-     * - missing = requested - bought (if any)
-     * - requestedTotal = total of requested quantities by price
-     * - paidTotal = total of bought quantities by price
-     */
     public Receipt sell(Buyer buyer) {
         Objects.requireNonNull(buyer, "buyer must not be null");
         return sell(buyer.getId(), buyer.getName(), buyer.getCart());
