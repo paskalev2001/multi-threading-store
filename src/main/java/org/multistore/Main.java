@@ -27,7 +27,7 @@ public class Main {
         try {
             List<Future<Receipt>> results = pool.invokeAll(tasks);
 
-            System.out.println("\n--- Receipts ---");
+            System.out.println("\n RECEIPTS \n");
             for (Future<Receipt> f : results) {
                 Receipt r = f.get();
                 System.out.println(r);
@@ -37,6 +37,6 @@ public class Main {
             pool.awaitTermination(5, TimeUnit.SECONDS);
         }
 
-        System.out.println("\nFinal inventory: " + store.snapshotInventory());
+        System.out.println("\n Final inventory: \n" + store.snapshotInventory());
     }
 }
