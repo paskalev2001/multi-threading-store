@@ -28,10 +28,6 @@ public final class DataFactory {
         return buyers;
     }
 
-    /**
-     * Random cart with up to maxDifferentProducts different products,
-     * each with quantity 1 - maxQtyPerProduct
-     */
     public static Cart randomCart(int maxDifferentProducts, int maxQtyPerProduct) {
         Cart cart = new Cart();
 
